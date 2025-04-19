@@ -1,0 +1,17 @@
+[Unit]
+Description=MagicMirror
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=pi
+Restart=always
+RestartSec=1
+ExecStart=/home/pi/magicmirror.sh
+WorkingDirectory=/home/pi/projects/MagicMirror
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+
+[Install]
+WantedBy=graphical.target
